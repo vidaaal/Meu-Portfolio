@@ -1,0 +1,26 @@
+{
+  "name": "portifolio-rafael-vidal",
+  "version": "1.0.0",
+  "description": "Portfólio web de Rafael Vidal - Desenvolvedor Full Stack",
+  "main": "frontend/index.html",
+  "scripts": {
+    "dev": "cd frontend && python -m http.server 8000",
+    "serve": "cd frontend && http-server",
+    "deploy": "vercel"
+  },
+  "keywords": [
+    "portfólio",
+    "desenvolvedor",
+    "full-stack",
+    "react",
+    "node.js",
+    "python"
+  ],
+  "author": "Rafael Vidal",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vidaaal/portifolio.git"
+  },
+  "homepage": "https://rafaelvidal.vercel.app"
+}

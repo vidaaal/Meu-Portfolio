@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfólio de Rafael Vidal, desenvolvedor Full Stack focado em aplicações web, APIs, interfaces modernas e sistemas inteligentes."
+    />
+    <title>Rafael Vidal | Desenvolvedor</title>
+    <link rel="icon" type="image/png" href="assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@300;400;500;600&family=Inspiration&family=Instrument+Sans:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&family=Red+Hat+Mono:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=footer-create" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="spotlight" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <nav class="nav-links" aria-label="Navegacao principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#tecnologias">Tecnologias</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#experiencia-formacao">Experiência</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <canvas class="hero-3d" data-hero-3d aria-hidden="true"></canvas>
+        <div class="hero-copy">
+          <p class="eyebrow">Desenvolvedor Full Stack / Brasil</p>
+          <h1>Rafael<br /><span class="hero-signature">VidaL</span></h1>
+          <div class="hero-actions">
+            <span class="hero-summary"
+              >Desenvolvendo aplicações modernas, APIs, automações e interfaces
+              digitais com foco em aprendizado constante, performance, clareza
+              visual e experiências reais de uso.</span
+            >
+            <div class="hero-buttons">
+              <a class="button primary" href="#contato"
+                ><span class="button-label">Fale Comigo</span></a
+              >
+              <a class="button secondary" href="#projetos">
+                <span class="button-label">Ver trabalhos</span>
+                <span class="button-arrow" aria-hidden="true">-></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Resumo profissional">
+          <img
+            src="assets/profile.png"
+            alt="Retrato editorial de um desenvolvedor em ambiente de trabalho"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <div class="hero-card-info">
+            <span>Disponível para projetos</span>
+            <strong id="local-time">São Paulo, --:--</strong>
+          </div>
+        </aside>
+
+        <div class="hero-ticker" aria-label="Tecnologias em destaque">
+          <span class="hero-ticker-label">Stack</span>
+          <div class="hero-ticker-window">
+            <div class="hero-ticker-track">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>TypeScript</span>
+              <span>Python</span>
+              <span>FastAPI</span>
+              <span>Flask</span>
+              <span>SQLite</span>
+              <span>Supabase</span>
+              <span>Figma</span>
+              <span>Automações</span>
+              <span aria-hidden="true">React</span>
+              <span aria-hidden="true">Node.js</span>
+              <span aria-hidden="true">TypeScript</span>
+              <span aria-hidden="true">Python</span>
+              <span aria-hidden="true">FastAPI</span>
+              <span aria-hidden="true">Flask</span>
+              <span aria-hidden="true">SQLite</span>
+              <span aria-hidden="true">Supabase</span>
+              <span aria-hidden="true">Figma</span>
+              <span aria-hidden="true">Automações</span>
+            </div>
+          </div>
+          <span class="hero-ticker-label hero-ticker-role">Role</span>
+        </div>
+      </section>
+
+      <section class="section intro" id="sobre">
+        <div
+          class="section-3d"
+          data-section-3d="intro"
+          aria-hidden="true"
+        ></div>
+        <div class="section-body about-layout">
+          <div class="about-copy">
+            <div class="about-heading-row">
+              <div class="section-label">
+                <span>01</span>
+                <p>Sobre</p>
+              </div>
+              <p class="about-kicker">Quem está por trás</p>
+            </div>
+            <h2 class="explicacao">
+              Desenvolvedor<br />
+              em&nbsp;Evolução<br />
+              <span>Unindo Código, Lógica,<br />IA e Design.</span>
+            </h2>
+            <p class="about-subtitle">
+              Código limpo, interfaces com presença e sistemas que saem do papel
+              com clareza.
+            </p>
+            <div class="about-text">
+              <p class="about-casad">
+                Sou o Rafael Vidal, desenvolvedor em formação e uma pessoa que
+                gosta de entender como as coisas funcionam por trás da tela.
+                Tenho interesse por tecnologia, design, organização de sistemas
+                e por transformar ideias meio soltas em algo que alguém consiga
+                usar de verdade.
+              </p>
+              <p>
+                Meu primeiro contato com lógica foi ainda novinho, na escola,
+                mexendo com <span class="about-accent">Scratch</span>, brincando
+                com os <span class="about-accent">wireds</span> do
+                <span class="about-accent">Habbo Hotel</span> e fazendo
+                circuitos de <span class="about-accent">redstone</span> no
+                <span class="about-accent">Minecraft</span>. Eu não chamava
+                aquilo de programação, mas já era a ideia de montar regras,
+                testar comportamentos e ver uma coisa acontecendo por causa do
+                que eu tinha criado.
+              </p>
+              <p>
+                Mais tarde, comecei a programar de verdade pelo
+                <span class="about-accent">SENAI</span>, por conta da
+                implementação do novo ensino médio. A escola precisava escolher
+                um curso técnico e, por votação, ADS foi o caminho escolhido.
+                Entrei meio sem saber onde isso ia dar e acabei encontrando
+                <span class="about-accent"
+                  >uma área que me prendeu de verdade</span
+                >.
+              </p>
+              <p>
+                Desde então, fui transformando estudo em projetos reais. Hoje
+                construo <span class="about-accent">aplicações web</span>,
+                <span class="about-accent">APIs</span>,
+                <span class="about-accent">automações</span> e
+                <span class="about-accent">experiências digitais</span>, sempre
+                tentando juntar <span class="about-accent">produto</span>,
+                <span class="about-accent">design</span> e
+                <span class="about-accent">engenharia</span> para criar soluções
+                que funcionem bem para quem vai usar.
+              </p>
+              <p>
+                Meu foco atual é crescer como desenvolvedor full stack. Meus
+                projetos passam por <span class="about-accent">React</span>,
+                <span class="about-accent">JavaScript</span>,
+                <span class="about-accent">Python</span>,
+                <span class="about-accent">Flask</span>,
+                <span class="about-accent">FastAPI</span>,
+                <span class="about-accent">SQLite</span>,
+                <span class="about-accent">integrações externas</span>,
+                <span class="about-accent">autenticação</span>,
+                <span class="about-accent">dados</span> e uma
+                <span class="about-accent">camada visual bem cuidada</span>.
+              </p>
+            </div>
+            <p class="about-emphasis">
+              Mais do que escrever código, eu gosto de construir um produto com
+              intenção.
+            </p>
+            <div class="about-signature">
+              <strong>Rafael VidaL</strong>
+              <span
+                >Rafael Vidal<br />Desenvolvedor full stack em formação</span
+              >
+            </div>
+          </div>
+          <aside
+            class="about-profile"
+            aria-label="Informações sobre Rafael Vidal"
+          >
+            <div class="about-photo">
+              <span class="about-status">Disponível para projetos</span>
+              <img
+                src="assets/profile.png"
+                alt="Retrato de Rafael Vidal"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="about-photo-footer">
+                <span>Rafael Vidal / 2026</span>
+                <span>BR</span>
+              </div>
+            </div>
+            <dl class="about-facts">
+              <div>
+                <dt>Area</dt>
+                <dd>Full Stack</dd>
+              </div>
+              <div>
+                <dt>Local</dt>
+                <dd>Brasil</dd>
+              </div>
+              <div>
+                <dt>Foco</dt>
+                <dd>Web, APIs e automações</dd>
+              </div>
+              <div>
+                <dt>Stack</dt>
+                <dd>React / Python / Flask / FastAPI</dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd>vidalrafaelbaldoni@gmail.com</dd>
+              </div>
+              <div>
+                <dt>Status</dt>
+                <dd>Aberto a projetos</dd>
+              </div>
+            </dl>
+            <a class="about-mail" href="mailto:vidalrafaelbaldoni@gmail.com"
+              >Enviar mensagem</a
+            >
+          </aside>
+        </div>
+      </section>
+
+      <section class="section stack" id="tecnologias">
+        <div
+          class="section-3d"
+          data-section-3d="stack"
+          aria-hidden="true"
+        ></div>
+        <div class="section-label">
+          <span>02</span>
+          <p>Tecnologias</p>
+        </div>
+        <div class="section-body tech-stack-content">
+          <div class="tech-heading">
+            <p class="eyebrow">Ferramentas</p>
+            <h2>Habilidades Técnicas</h2>
+            <p class="mono-phrase">
+              Tecnologias que uso para desenvolver aplicações web, APIs,
+              interfaces modernas, automacoes, dashboards e protótipos SaaS.
+            </p>
+          </div>
+          <div class="tech-icon-grid">
+            <article class="tech-card">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                alt=""
+              />
+              <span>HTML5</span>
+            </article>
+            <article class="tech-card">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                alt=""
+              />
+              <span>CSS3</span>
+            </article>
+            <article class="tech-card">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                alt=""
+              />
+              <span>Java</span>
+            </article>
+            <article class="tech-card">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt=""
+              />
+              <span>JavaScript</span>
+            </article>
+            <article class="tech-card">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                alt=""
+              />
+              <span>TypeScript</span>
+            </article>
+            <article class="tech-card">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                alt=""
+              />
+              <span>React</span>
+            </article>
+            <article class="tech-card">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                alt=""
+              />
+              <span>Node.js</span>
+            </article>
+            <article class="tech-card">
+              <img
+                decoding="async"
+                loading="lazy"
+                class="tech-logo-invert"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                alt=""
+              />
+              <span>Express.js</span>
+            </article>
+            <article class="tech-card">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg"
+                alt=""
+              />
+              <span>SQLite</span>
+            </article>
+            <article class="tech-card">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                alt=""
+              />
+              <span>MySQL</span>
+            </article>
+            <article class="tech-card">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+                alt=""
+              />
+              <span>Supabase</span>
+            </article>
+            <article class="tech-card">
+              <img
+                decoding="async"
+                loading="lazy"
+                class="tech-logo-invert"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                alt=""
+              />
+              <span>GitHub</span>
+            </article>
+
+            <article class="tech-card">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+                alt=""
+              />
+              <span>Flutter</span>
+            </article>
+            <article class="tech-card">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
+                alt=""
+              />
+              <span>Dart</span>
+            </article>
+            <article class="tech-card">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+                alt=""
+              />
+              <span>PHP</span>
+            </article>
+            <article class="tech-card">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="https://avatars.githubusercontent.com/u/74943865?s=200&v=4"
+                alt=""
+              />
+              <span>FlutterFlow</span>
+            </article>
+          </div>
+          <p class="tech-note mono-phrase">
+            Também estudo arquitetura de software, engenharia de APIs e
+            segurança de aplicações.
+          </p>
+        </div>
+      </section>
+
+      <section class="section projects" id="projetos">
+        <div
+          class="section-3d"
+          data-section-3d="projects"
+          aria-hidden="true"
+        ></div>
+        <div class="section-label">
+          <span>03</span>
+          <p>Projetos</p>
+        </div>
+        <div class="project-heading">
+          <p class="eyebrow">Portfolio</p>
+          <h2>Meus Projetos</h2>
+          <p class="mono-phrase">
+            Experimentos, estudos e entregas reais onde transformo lógica,
+            interface e backend em produto.
+          </p>
+        </div>
+        <div class="project-list">
+          <article class="project featured">
+            <figure class="project-preview">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="assets/landingecoway.png"
+                alt="Preview do site EcoWay"
+              />
+            </figure>
+            <div>
+              <span class="project-index">001</span>
+              <h3>EcoWay</h3>
+            </div>
+            <p>
+              Projeto acadêmico da Facens para UPX III: plataforma para rotas de
+              veículos elétricos com autonomia inteligente, estações
+              compatíveis, planejamento seguro e APIs externas.
+            </p>
+            <ul>
+              <li>React</li>
+              <li>Flask</li>
+              <li>SQLite</li>
+              <li>OpenRouteService</li>
+            </ul>
+          </article>
+          <article class="project">
+            <figure class="project-preview">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="assets/landingsalute.png"
+                alt="Preview do site Salute Studio Pilates"
+              />
+            </figure>
+            <div>
+              <span class="project-index">002</span>
+              <h3>Salute Studio Pilates</h3>
+            </div>
+            <p>
+              Site institucional para estúdio de pilates em Salto, com
+              apresentação do espaço, diferenciais, localização e chamada direta
+              para agendamento da primeira aula.
+            </p>
+            <ul>
+              <li>Site institucional</li>
+              <li>UX/UI</li>
+              <li>Responsivo</li>
+              <li>WhatsApp</li>
+            </ul>
+          </article>
+          <article class="project">
+            <figure class="project-preview">
+              <img
+                decoding="async"
+                loading="lazy"
+                src="assets/jojolanding.png"
+                alt="Preview do JoJo API"
+              />
+            </figure>
+            <div>
+              <span class="project-index">003</span>
+              <h3>JoJo API</h3>
+            </div>
+            <p>
+              API de personagens de JoJo's Bizarre Adventure, utilizando dados
+              da API do JoJo
+            </p>
+            <ul>
+              <li>FASTAPI</li>
+              <li>PYTHON</li>
+              <li>SQLITE</li>
+              <li>JAVASCRIPT</li>
+              <li>API REST</li>
+              <li>SWAGGER</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section career" id="experiencia-formacao">
+        <div
+          class="section-3d"
+          data-section-3d="career"
+          aria-hidden="true"
+        ></div>
+        <div class="section-label">
+          <span>04</span>
+          <p>Experiência</p>
+        </div>
+        <div class="career-content">
+          <div class="career-heading">
+            <p class="career-kicker">Carreira</p>
+            <h2>Experiência e<br />Formação Acadêmica</h2>
+            <p class="mono-phrase">
+              Cada etapa da minha formação fortaleceu minha visão sobre
+              tecnologia, produto e desenvolvimento de soluções úteis.
+            </p>
+          </div>
+
+          <div class="career-grid">
+            <article class="career-card career-featured">
+              <div class="career-logo is-hidden-legacy">
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="https://yt3.googleusercontent.com/ytc/AIdro_kbVds4kiNao9ArAeElldk34MaPAgLhVRlF6CzFAaTLhog=s900-c-k-c0x00ffffff-no-rj"
+                  alt="Logo Eucatex"
+                />
+              </div>
+              <div>
+                <span class="career-type">Experiência</span>
+                <div class="career-title-row">
+                  <span class="career-inline-logo">
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/062018/untitled-1_88.png?8CIHF3f02WICaqRqI2YQo3VXd2bue024&itok=3cT0EdK3"
+                      alt="Eucatex"
+                    />
+                  </span>
+                  <h3>Jovem Aprendiz de TI</h3>
+                </div>
+                <p>Eucatex · Aprendiz</p>
+                <small class="career-period"
+                  >mar de 2026 - o momento · Salto, São Paulo · No local</small
+                >
+              </div>
+            </article>
+
+            <article class="career-card">
+              <div class="career-logo is-hidden-legacy">
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="https://encrypted-tbn0.gstatic.com/imagesq=tbn:ANd9GcSy-10XrhxkxduW8nAFLVEoufPI1kr83IhqqA&s"
+                  alt="Logo Facens"
+                />
+              </div>
+              <div>
+                <span class="career-type">Formação acadêmica</span>
+                <div class="career-title-row">
+                  <span class="career-inline-logo">
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy-10XrhxkxduW8nAFLVEoufPI1kr83IhqqA&s"
+                      alt="Facens"
+                    />
+                  </span>
+                  <h3>Centro Universitário Facens</h3>
+                </div>
+                <p>
+                  Curso Superior de Tecnologia (CST), Análise e Desenvolvimento
+                  de Sistemas
+                </p>
+                <small class="career-period">mar de 2025 - o momento</small>
+              </div>
+            </article>
+
+            <article class="career-card">
+              <div class="career-logo is-hidden-legacy">
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="https://media.licdn.com/dms/image/v2/D4D0BAQFjJ25k3vfVqg/company-logo_200_200/B4DZfmIJaqH4AI-/0/1751912585256/senaisp_pirituba_logoe=2147483647&v=beta&t=HhDJQSsQ7WhpKGGOgKo_4yYN8_iK3nNpCvxh7rgK29E"
+                  alt="Logo SENAI"
+                />
+              </div>
+              <div>
+                <span class="career-type">Formação técnica</span>
+                <div class="career-title-row">
+                  <span class="career-inline-logo">
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="https://proeducador.sp.senai.br/site/icons/logo-small.png"
+                      alt="SENAI"
+                    />
+                  </span>
+                  <h3>SENAI "Italo Bologna" - Itu/SP</h3>
+                </div>
+                <p>Análise e Desenvolvimento de Sistemas</p>
+                <small class="career-period"
+                  >jan de 2023 - dez de 2024 · Curso técnico com C.H. de 1200
+                  horas</small
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section experience" id="estudos">
+        <div
+          class="section-3d"
+          data-section-3d="experience"
+          aria-hidden="true"
+        ></div>
+        <div class="section-label">
+          <span>05</span>
+          <p>Estudos</p>
+        </div>
+        <div class="timeline">
+          <article>
+            <span>Agora</span>
+            <h3>Agentes e Engenharia de IA</h3>
+            <p>
+              Estudo de agentes inteligentes, automacoes, fluxos com IA (N8N,
+              Make) e integracao de modelos em sistemas reais.
+            </p>
+          </article>
+          <article>
+            <span>Backend</span>
+            <h3>APIs, Node.js e Express</h3>
+            <p>
+              Aprofundamento em APIs escalaveis, padroes de backend,
+              autenticacao e integracoes.
+            </p>
+          </article>
+          <article>
+            <span>Processos</span>
+            <h3>BPM e Automacoes</h3>
+            <p>
+              Estudo e pratica com formularios, fluxos de aprovacao, regras de
+              negocio e automacoes em processos corporativos.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="section connect" id="contato">
+        <div class="section-label">
+          <span>06</span>
+          <p>Contato</p>
+        </div>
+        <div class="connect-layout">
+          <div class="connect-copy">
+            <p class="connect-status">Disponivel para 2026</p>
+            <h2>Tem um projeto<br /><span>em mente?</span></h2>
+            <p>
+              Estou disponivel para projetos freelance, consultorias e
+              parcerias. Respondo geralmente em poucas horas. A forma mais
+              rapida e pelo WhatsApp.
+            </p>
+            <a
+              class="connect-cta"
+              href="https://wa.me/5512991667478"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="connect-cta-icon" aria-hidden="true">
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg"
+                  alt=""
+                />
+              </span>
+              WhatsApp direto
+            </a>
+          </div>
+          <div class="connect-panel">
+            <div class="connect-links">
+              <a
+                href="https://wa.me/5511985941230"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="connect-icon" aria-hidden="true">
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg"
+                    alt=""
+                  />
+                </span>
+                <span>WhatsApp</span>
+                <strong>+55 (11) 98594-1230</strong>
+              </a>
+              <a href="mailto:vidalrafaelbaldoni@gmail.com">
+                <span class="connect-icon" aria-hidden="true">
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg"
+                    alt=""
+                  />
+                </span>
+                <span>Email</span>
+                <strong>vidalrafaelbaldoni@gmail.com</strong>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rafael-baldoni-vidal-8625a3272/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="connect-icon" aria-hidden="true">
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg"
+                    alt=""
+                  />
+                </span>
+                <span>LinkedIn</span>
+                <strong>linkedin.com/in/rafael-baldoni-vidal-8625a3272</strong>
+              </a>
+              <a
+                href="https://github.com/vidaaal"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="connect-icon" aria-hidden="true">
+                  <img
+                    decoding="async"
+                    loading="lazy"
+                    src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg"
+                    alt=""
+                  />
+                </span>
+                <span>GitHub</span>
+                <strong>github.com/vidaaal</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="project-modal" id="project-modal" aria-hidden="true">
+      <div class="project-modal-backdrop" data-close-modal></div>
+      <article
+        class="project-modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button
+          class="modal-close"
+          type="button"
+          data-close-modal
+          aria-label="Fechar projeto"
+        >
+          Fechar
+        </button>
+        <div class="modal-content">
+          <p class="modal-kicker" data-project-index>Projeto 001</p>
+          <h2 id="modal-title" data-project-title>EcoWay</h2>
+          <p data-project-description></p>
+          <a
+            class="modal-link"
+            href="#"
+            target="_blank"
+            rel="noreferrer"
+            data-project-link
+            >Ver projeto online</a
+          >
+          <div class="modal-grid">
+            <div>
+              <h3>Recursos</h3>
+              <ul data-project-features></ul>
+            </div>
+            <div>
+              <h3>Tecnologias</h3>
+              <ul class="modal-tags" data-project-tags></ul>
+            </div>
+          </div>
+          <div class="Areadme-content" data-project-Areadme></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="project-modal stack-modal" id="stack-modal" aria-hidden="true">
+      <div class="project-modal-backdrop" data-close-stack></div>
+      <article
+        class="project-modal-panel stack-modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="stack-modal-title"
+      >
+        <button
+          class="modal-close"
+          type="button"
+          data-close-stack
+          aria-label="Fechar tecnologias"
+        >
+          Fechar
+        </button>
+        <div class="modal-content stack-modal-content">
+          <p class="modal-kicker" data-stack-kicker>Tecnologias</p>
+          <h2 id="stack-modal-title" data-stack-title>Frontend</h2>
+          <p data-stack-description></p>
+          <div class="stack-detail-grid" data-stack-tools></div>
+          <div class="stack-info-grid">
+            <div>
+              <h3>Como uso</h3>
+              <ul data-stack-uses></ul>
+            </div>
+            <div>
+              <h3>Foco atual</h3>
+              <ul data-stack-focus></ul>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-marquee" aria-label="Chamada final">
+        <span>Let's</span>
+        <em>create</em>
+      </div>
+
+      <div class="footer-bar">
+        <div class="footer-profile">
+          <img
+            src="assets/profile.png"
+            alt="Rafael Vidal"
+            loading="lazy"
+            decoding="async"
+          />
+          <div>
+            <strong>Rafael Vidal</strong>
+            <span>Desenvolvedor Full Stack · BR</span>
+          </div>
+        </div>
+
+        <div class="footer-center">
+          <span
+            >© 2026 Rafael Baldoni Vidal - Todos os direitos reservados
+          </span>
+        </div>
+
+        <nav class="footer-social" aria-label="Links sociais">
+          <a
+            href="https://www.linkedin.com/in/rafael-baldoni-vidal-8625a3272/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+          >
+            <img
+              decoding="async"
+              loading="lazy"
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg"
+              alt=""
+            />
+          </a>
+          <a
+            href="https://github.com/vidaaal"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+          >
+            <img
+              decoding="async"
+              loading="lazy"
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg"
+              alt=""
+            />
+          </a>
+          <a href="mailto:vidalrafaelbaldoni@gmail.com" aria-label="Email">
+            <img
+              decoding="async"
+              loading="lazy"
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg"
+              alt=""
+            />
+          </a>
+          <a
+            href="https://wa.me/5512991667478"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="WhatsApp"
+          >
+            <img
+              decoding="async"
+              loading="lazy"
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg"
+              alt=""
+            />
+          </a>
+        </nav>
+      </div>
+      <span>Rafael Vidal</span>
+      <span>Portfólio 2026</span>
+    </footer>
+
+    <script type="module" src="three-scene.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer src="script.js?v=career-progress"></script>
+  </body>
+</html>
