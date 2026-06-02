@@ -1995,10 +1995,11 @@ dd {
 }
 
 .connect h2 span {
-  color: var(--violet);
+  color: rgb(161, 2, 253);
+  text-shadow: 0 0 0.5rem rgb(161, 2, 253), 0 0 1rem rgb(161, 2, 253);
   font-family: "Inspiration", cursive;
   font-size: 1.12em;
-  font-weight: 400;
+  font-weight: 900;
 }
 
 .connect-copy > p:not(.connect-status) {
@@ -2006,9 +2007,11 @@ dd {
   margin: 2rem 0 0;
   color: rgba(244, 238, 233, 0.56);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 300;
   line-height: 1.55;
 }
+
+
 
 .connect-cta {
   display: inline-flex;
@@ -3493,8 +3496,7 @@ body.modal-open {
 .site-footer {
   display: grid;
   gap: clamp(2rem, 5vw, 4rem);
-  padding: clamp(4rem, 8vw, 7rem) clamp(1.2rem, 5vw, 5rem)
-    clamp(2rem, 4vw, 3rem);
+  padding: clamp(2rem, 4vw, 3.5rem) clamp(1.2rem, 5vw, 5rem);
   border-top: 1px solid rgba(242, 239, 231, 0.08);
   background: #050309;
   color: var(--muted);
@@ -3518,7 +3520,7 @@ body.modal-open {
 
 .footer-marquee span {
   font-family: "Outfit", "Instrument Sans", system-ui, sans-serif;
-  font-size: clamp(5.2rem, 15vw, 14rem);
+  font-size: clamp(5.2rem, 9vw, 14rem);
   font-weight: 900;
   letter-spacing: 0;
   background: linear-gradient(
