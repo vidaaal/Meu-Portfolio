@@ -1,0 +1,798 @@
+.project-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 3vw, 2rem);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+.project-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.project-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 5, 4, 0.76);
+  backdrop-filter: blur(18px);
+}
+
+.project-modal-panel {
+  position: relative;
+  display: block;
+  width: min(1080px, 100%);
+  max-height: min(94svh, 940px);
+  overflow: auto;
+  border: 1px solid rgba(242, 239, 231, 0.18);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px), #05040c;
+  background-size: 36px 36px;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
+  transform: translateY(2rem) scale(0.96);
+  transition: transform 260ms cubic-bezier(0.2, 0.85, 0.2, 1);
+}
+
+.project-modal.is-open .project-modal-panel {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3;
+  min-height: 2.5rem;
+  padding: 0 0.9rem;
+  border: 1px solid var(--line);
+  background: rgba(4, 3, 15, 0.78);
+  color: var(--ink);
+  font-family:
+    "Atkinson Hyperlegible Mono", "Red Hat Mono", "Space Mono", ui-monospace,
+    monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  cursor: none;
+}
+
+.modal-close:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.modal-visual {
+  position: sticky;
+  top: 0;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1rem, 3vw, 2rem);
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      var(--modal-a, rgba(242, 239, 231, 0.3)),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      var(--modal-b, rgba(182, 173, 176, 0.28)),
+      transparent 34%
+    ),
+    linear-gradient(145deg, #120818, #04030f);
+  overflow: hidden;
+}
+
+.modal-visual::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+  opacity: 0.28;
+}
+
+.visual-topbar,
+.visual-screen {
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(242, 239, 231, 0.2);
+  background: rgba(4, 3, 15, 0.82);
+  backdrop-filter: blur(12px);
+}
+
+.visual-topbar {
+  display: flex;
+  gap: 0.45rem;
+  padding: 0.85rem;
+  border-bottom: 0;
+}
+
+.visual-topbar span {
+  width: 0.65rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.visual-screen {
+  min-height: clamp(18rem, 40vw, 30rem);
+  padding: clamp(1rem, 3vw, 1.6rem);
+  overflow: hidden;
+}
+
+.visual-screen > * {
+  position: relative;
+  z-index: 2;
+}
+
+.visual-screen:has(.info-preview),
+.visual-screen.has-info-preview {
+  padding: clamp(0.8rem, 2vw, 1.25rem);
+}
+
+.visual-screen::before,
+.visual-screen::after {
+  position: absolute;
+  content: "";
+}
+
+.modal-visual.ecoway .visual-screen {
+  background:
+    linear-gradient(90deg, rgba(242, 239, 231, 0.22) 1px, transparent 1px),
+    linear-gradient(rgba(242, 239, 231, 0.18) 1px, transparent 1px),
+    radial-gradient(
+      circle at 32% 40%,
+      rgba(242, 239, 231, 0.52),
+      transparent 0.35rem
+    ),
+    radial-gradient(
+      circle at 62% 62%,
+      rgba(182, 173, 176, 0.58),
+      transparent 0.35rem
+    ),
+    linear-gradient(135deg, rgba(242, 239, 231, 0.18), rgba(6, 8, 4, 0.92));
+  background-size:
+    36px 36px,
+    36px 36px,
+    auto,
+    auto,
+    auto;
+}
+
+.modal-visual.ecoway .visual-screen::before {
+  right: 12%;
+  bottom: 15%;
+  left: 12%;
+  height: 0.35rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transform: rotate(-12deg);
+  box-shadow: 0 0 28px rgba(242, 239, 231, 0.55);
+}
+
+.modal-visual.ecoway .visual-screen:not(:empty)::before,
+.modal-visual.ecoway .visual-screen:not(:empty)::after {
+  display: none;
+}
+
+.info-preview {
+  position: relative;
+  z-index: 2;
+  min-height: 100%;
+  padding: clamp(1rem, 2.5vw, 1.6rem);
+  border: 1px solid rgba(242, 239, 231, 0.14);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(242, 239, 231, 0.08),
+      rgba(242, 239, 231, 0.015)
+    ),
+    rgba(7, 7, 6, 0.58);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 22px 70px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px) saturate(1.2);
+  color: var(--ink);
+}
+
+.info-preview::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background:
+    radial-gradient(
+      circle at 16% 12%,
+      rgba(242, 239, 231, 0.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 84% 88%,
+      rgba(182, 173, 176, 0.12),
+      transparent 28%
+    );
+  pointer-events: none;
+}
+
+.project-shot {
+  margin: calc(clamp(1rem, 2.5vw, 1.6rem) * -1)
+    calc(clamp(1rem, 2.5vw, 1.6rem) * -1) 1.7rem;
+  border: 1px solid rgba(242, 239, 231, 0.24);
+  background: rgba(0, 0, 0, 0.34);
+  box-shadow:
+    0 22px 70px rgba(0, 0, 0, 0.34),
+    0 0 42px rgba(242, 239, 231, 0.08);
+  overflow: hidden;
+}
+
+.project-shot img {
+  width: 100%;
+  aspect-ratio: 16 / 7.5;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(1.08) contrast(1.04);
+  transition:
+    filter 180ms ease,
+    transform 220ms ease;
+}
+
+.project-shot:hover img {
+  filter: saturate(1.18) contrast(1.08);
+  transform: scale(1.025);
+}
+
+.info-preview h4 {
+  margin: 0 0 1rem;
+  max-width: 14ch;
+  font-size: clamp(1.7rem, 3.8vw, 3.3rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.info-preview p {
+  max-width: 38rem;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.7vw, 1.12rem);
+}
+
+.info-grid,
+.integration-grid,
+.endpoint-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+}
+
+.info-grid,
+.integration-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.info-grid span,
+.integration-grid span,
+.endpoint-list span {
+  min-height: 6.5rem;
+  padding: 0.95rem;
+  border: 1px solid rgba(242, 239, 231, 0.14);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.015)
+    ),
+    rgba(0, 0, 0, 0.32);
+  color: var(--muted);
+  font-size: 0.96rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.info-grid span:hover,
+.integration-grid span:hover,
+.endpoint-list span:hover {
+  border-color: rgba(242, 239, 231, 0.36);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(242, 239, 231, 0.1),
+      rgba(255, 255, 255, 0.02)
+    ),
+    rgba(0, 0, 0, 0.42);
+  transform: translateY(-3px);
+}
+
+.endpoint-list span {
+  min-height: auto;
+  font-family:
+    "Atkinson Hyperlegible Mono", "Red Hat Mono", "Space Mono", ui-monospace,
+    monospace;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+}
+
+.info-grid b,
+.integration-grid b,
+.endpoint-list b {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--accent);
+  font-family:
+    "Atkinson Hyperlegible Mono", "Red Hat Mono", "Space Mono", ui-monospace,
+    monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.modal-visual[data-preview="1"] .visual-screen::after {
+  top: 13%;
+  right: 9%;
+  width: 34%;
+  height: 72%;
+  border: 1px solid rgba(242, 239, 231, 0.24);
+  background:
+    linear-gradient(var(--accent), var(--accent)) 1rem 1rem / 55% 0.35rem
+      no-repeat,
+    linear-gradient(rgba(242, 239, 231, 0.38), rgba(242, 239, 231, 0.38)) 1rem
+      2.4rem / 72% 0.28rem no-repeat,
+    linear-gradient(rgba(242, 239, 231, 0.22), rgba(242, 239, 231, 0.22)) 1rem
+      3.4rem / 52% 0.28rem no-repeat,
+    rgba(0, 0, 0, 0.32);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.28);
+}
+
+.modal-visual[data-preview="2"] .visual-screen::after {
+  right: 10%;
+  bottom: 11%;
+  left: 10%;
+  height: 34%;
+  border: 1px solid rgba(242, 239, 231, 0.22);
+  background:
+    linear-gradient(90deg, rgba(242, 239, 231, 0.4), rgba(182, 173, 176, 0.38))
+      1rem 1rem / 46% 0.45rem no-repeat,
+    linear-gradient(rgba(242, 239, 231, 0.35), rgba(242, 239, 231, 0.35)) 1rem
+      2.6rem / 82% 0.32rem no-repeat,
+    linear-gradient(rgba(242, 239, 231, 0.2), rgba(242, 239, 231, 0.2)) 1rem
+      3.7rem / 64% 0.32rem no-repeat,
+    rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(8px);
+}
+
+.modal-content {
+  padding: clamp(2rem, 5vw, 4rem);
+  font-family:
+    "Atkinson Hyperlegible Mono", "Red Hat Mono", "Space Mono", ui-monospace,
+    monospace;
+}
+
+.modal-kicker,
+.modal-grid h3 {
+  color: var(--accent-2);
+  font-family:
+    "Atkinson Hyperlegible Mono", "Red Hat Mono", "Space Mono", ui-monospace,
+    monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.modal-content h2 {
+  max-width: 100%;
+  margin-bottom: 1.2rem;
+  color: var(--ink);
+  font-size: clamp(2rem, 4.8vw, 4.3rem);
+  font-weight: 850;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.modal-content h2::before {
+  content: "# ";
+  color: var(--violet);
+  font-family:
+    "Atkinson Hyperlegible Mono", "Red Hat Mono", "Space Mono", ui-monospace,
+    monospace;
+}
+
+.modal-content p {
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid rgba(242, 239, 231, 0.12);
+  background: rgba(0, 0, 0, 0.26);
+  color: var(--muted);
+  font-size: clamp(0.92rem, 1.6vw, 1.04rem);
+  line-height: 1.65;
+}
+
+.modal-content .modal-kicker {
+  display: block;
+  width: fit-content;
+  margin: 0 0 0.9rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  line-height: 1;
+}
+
+.modal-content > p:not(.modal-kicker)::before {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: rgba(242, 239, 231, 0.5);
+  content: "README.md";
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+
+.modal-link {
+  display: inline-flex;
+  margin-top: 0.7rem;
+  padding: 0.75rem 0.95rem;
+  border: 1px solid var(--violet);
+  background: rgba(var(--violet-rgb), 0.08);
+  color: var(--violet);
+  font-family:
+    "Atkinson Hyperlegible Mono", "Red Hat Mono", "Space Mono", ui-monospace,
+    monospace;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.modal-link:hover {
+  background: var(--violet);
+  color: var(--bg);
+  box-shadow: 0 0 28px rgba(var(--violet-rgb), 0.28);
+  transform: translateY(-3px);
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.modal-grid > div {
+  padding: 1rem;
+  border: 1px solid rgba(242, 239, 231, 0.12);
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.modal-grid h3::before {
+  content: "## ";
+  color: var(--violet);
+}
+
+.modal-grid ul,
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.modal-grid li {
+  padding: 0.5rem 0.65rem;
+  border: 1px solid rgba(242, 239, 231, 0.13);
+  background: rgba(242, 239, 231, 0.035);
+  color: var(--ink);
+  font-family:
+    "Atkinson Hyperlegible Mono", "Red Hat Mono", "Space Mono", ui-monospace,
+    monospace;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+}
+
+.modal-grid li::before {
+  margin-right: 0.35rem;
+  color: rgba(var(--violet-rgb), 0.9);
+  content: "-";
+}
+
+.modal-tags li::before {
+  content: "`";
+}
+
+.modal-tags li::after {
+  color: rgba(var(--violet-rgb), 0.9);
+  content: "`";
+}
+
+.readme-content {
+  display: grid;
+  gap: clamp(1.7rem, 4vw, 3rem);
+  margin-top: clamp(2rem, 5vw, 4rem);
+  padding-top: clamp(1.4rem, 3vw, 2rem);
+  border-top: 1px solid rgba(242, 239, 231, 0.12);
+}
+
+.readme-section {
+  display: grid;
+  gap: 1rem;
+}
+
+.readme-section h3 {
+  margin: 0;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(242, 239, 231, 0.12);
+  color: var(--ink);
+  font-family: "Saprona", "Outfit", system-ui, sans-serif;
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  line-height: 1.1;
+}
+
+.readme-section h3::before {
+  color: var(--violet);
+  content: "## ";
+  font-family:
+    "Atkinson Hyperlegible Mono", "Red Hat Mono", "Space Mono", ui-monospace,
+    monospace;
+}
+
+.readme-section h4 {
+  margin: 0.8rem 0 0;
+  color: var(--ink);
+  font-family: "Saprona", "Outfit", system-ui, sans-serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+  line-height: 1.2;
+}
+
+.readme-section h4::before {
+  color: rgba(var(--violet-rgb), 0.9);
+  content: "### ";
+  font-family:
+    "Atkinson Hyperlegible Mono", "Red Hat Mono", "Space Mono", ui-monospace,
+    monospace;
+}
+
+.readme-section p,
+.readme-section li,
+.readme-section td,
+.readme-section th,
+.readme-section blockquote {
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.45vw, 1.08rem);
+  line-height: 1.7;
+}
+
+.readme-section p {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.readme-section blockquote {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--violet);
+  background: rgba(242, 239, 231, 0.035);
+  font-style: italic;
+}
+
+.readme-section ul {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.readme-section table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+.readme-section th,
+.readme-section td {
+  padding: 0.85rem 0.95rem;
+  border: 1px solid rgba(242, 239, 231, 0.13);
+  text-align: left;
+  vertical-align: top;
+}
+
+.readme-section th {
+  width: 28%;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.readme-section code {
+  padding: 0.08rem 0.32rem;
+  border-radius: 0.25rem;
+  background: rgba(117, 135, 65, 0.18);
+  color: #c5d58a;
+  font-family:
+    "Atkinson Hyperlegible Mono", "Red Hat Mono", "Space Mono", ui-monospace,
+    monospace;
+}
+
+.readme-section pre {
+  margin: 0;
+  padding: 1.1rem;
+  border: 1px solid rgba(242, 239, 231, 0.12);
+  background: #171421;
+  overflow: auto;
+}
+
+.readme-section pre code {
+  display: block;
+  padding: 0;
+  background: transparent;
+  color: var(--muted);
+  line-height: 1.65;
+  white-space: pre;
+}
+
+.readme-section img {
+  width: 100%;
+  border: 1px solid rgba(242, 239, 231, 0.12);
+  background: #020109;
+}
+
+.readme-section img.is-missing {
+  display: none;
+}
+
+.stack-modal-panel {
+  width: min(920px, 100%);
+}
+
+.stack-modal-content {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.stack-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: 0.75rem;
+}
+
+.stack-tool {
+  display: grid;
+  min-height: 8.6rem;
+  place-items: center;
+  gap: 0.7rem;
+  padding: 1rem;
+  border: 1px solid rgba(242, 239, 231, 0.12);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.012)
+    ),
+    rgba(0, 0, 0, 0.28);
+  text-align: center;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.stack-tool:hover {
+  border-color: rgba(var(--violet-rgb), 0.72);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(var(--violet-rgb), 0.13),
+      rgba(255, 255, 255, 0.02)
+    ),
+    rgba(0, 0, 0, 0.38);
+  transform: translateY(-4px);
+}
+
+.stack-tool img,
+.stack-tool-initials {
+  width: 3rem;
+  height: 3rem;
+}
+
+.stack-tool img {
+  object-fit: contain;
+  filter: drop-shadow(0 0 18px rgba(242, 239, 231, 0.16));
+}
+
+.stack-tool-initials {
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(242, 239, 231, 0.24);
+  background: rgba(var(--violet-rgb), 0.14);
+  color: var(--ink);
+  font-family:
+    "Atkinson Hyperlegible Mono", "Red Hat Mono", "Space Mono", ui-monospace,
+    monospace;
+  font-weight: 400;
+}
+
+.stack-tool strong {
+  font-family:
+    "Atkinson Hyperlegible Mono", "Red Hat Mono", "Space Mono", ui-monospace,
+    monospace;
+  font-size: 0.76rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.stack-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.stack-info-grid > div {
+  padding: 1rem;
+  border: 1px solid rgba(242, 239, 231, 0.12);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.stack-info-grid h3 {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+  font-family:
+    "Atkinson Hyperlegible Mono", "Red Hat Mono", "Space Mono", ui-monospace,
+    monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.stack-info-grid ul {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stack-info-grid li {
+  color: var(--ink);
+  font-size: 0.96rem;
+}
+
+.modal-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.modal-thumb {
+  min-height: 5.25rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  cursor: none;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.modal-thumb.is-active,
+.modal-thumb:hover {
+  border-color: var(--accent);
+  background: rgba(242, 239, 231, 0.12);
+  transform: translateY(-4px);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
