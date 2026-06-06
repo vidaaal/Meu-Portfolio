@@ -25,9 +25,9 @@ if (canvas) {
   group.position.set(0.42, -0.05, 0);
   scene.add(group);
 
-  const red = new THREE.Color("#6f00ff");
-  const white = new THREE.Color("#ff00dd");
-  const smoke = new THREE.Color("#4d0088");
+  const red = new THREE.Color("#758741");
+  const white = new THREE.Color("#a3b36b");
+  const smoke = new THREE.Color("#4e5e2a");
 
   const coreMaterial = new THREE.MeshStandardMaterial({
     color: "#09090b",
@@ -264,12 +264,12 @@ if (canUseSection3d)
     group.rotation.set(0.2, 0.4 * direction, -0.12 * direction);
     scene.add(group);
 
-    const violet = new THREE.Color("#6200b3");
-    const pink = new THREE.Color("#ff00dd");
+    const olive = new THREE.Color("#758741");
+    const moss = new THREE.Color("#a3b36b");
     const soft = new THREE.Color("#eeeeee");
 
     const wireMaterial = new THREE.MeshBasicMaterial({
-      color: kind === "projects" || kind === "career" ? violet : pink,
+      color: kind === "projects" || kind === "career" ? olive : moss,
       transparent: true,
       opacity: kind === "contact" ? 0.2 : 0.15,
       wireframe: true,
@@ -319,7 +319,7 @@ if (canUseSection3d)
         Math.sin(angle * 1.7) * 0.62 + (Math.random() - 0.5) * 0.4;
       positions[i3 + 2] = Math.sin(angle) * radius * 0.52;
 
-      const color = i % 5 === 0 ? violet : soft;
+      const color = i % 5 === 0 ? olive : soft;
       colors[i3] = color.r;
       colors[i3 + 1] = color.g;
       colors[i3 + 2] = color.b;

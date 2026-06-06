@@ -401,12 +401,6 @@ function setupStackDetails() {
         description:
           "Camada visual dos projetos: estrutura, responsividade, interaes, estados de tela e pequenos detalhes que fazem a interface parecer viva sem perder clareza.",
         tools: [
-          { name: "HTML5", icon: `${iconBase}/html5/html5-original.svg` },
-          { name: "CSS3", icon: `${iconBase}/css3/css3-original.svg` },
-          {
-            name: "JavaScript",
-            icon: `${iconBase}/javascript/javascript-original.svg`,
-          },
           {
             name: "TypeScript",
             icon: `${iconBase}/typescript/typescript-original.svg`,
@@ -471,8 +465,8 @@ function setupStackDetails() {
           { name: "MySQL", icon: `${iconBase}/mysql/mysql-original.svg` },
           { name: "SQL", initials: "SQL" },
           {
-            name: "Supabase",
-            icon: `${iconBase}/supabase/supabase-original.svg`,
+            name: "Lecom",
+            icon: "https://conjecto.com.br/wp-content/uploads/2023/06/logo_lecom_COLORIDO_RGB-1.png",
           },
           { name: "Dashboards", initials: "BI" },
         ],
@@ -785,7 +779,7 @@ corepack pnpm run build</code></pre>
             </ul>
           </section>
         `,
-        colors: ["rgba(98, 0, 179, 0.34)", "rgba(59, 0, 134, 0.28)"],
+        colors: ["rgba(117, 135, 65, 0.34)", "rgba(78, 94, 42, 0.28)"],
         previews: [
           {
             label: "Viso geral",
@@ -1109,7 +1103,7 @@ function setupClickSparks() {
   if (reducedMotion || !canHover) return;
 
   window.addEventListener("click", (event) => {
-    const colors = ["#65d4bf", "#7b20d6", "#6200B3", "#f2efe7"];
+    const colors = ["#758741", "#a3b36b", "#4e5e2a", "#ffffff"];
 
     for (let i = 0; i < 10; i += 1) {
       const particle = document.cAreateElement("span");
