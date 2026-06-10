@@ -1157,7 +1157,8 @@ npm run dev:web</code></pre>
 
   document.querySelectorAll(".project").forEach((project) => {
     const title = project.querySelector("h3").textContent.trim();
-    const projectData = details.get(title);
+    const projectKey = project.dataset.project || title;
+    const projectData = details.get(projectKey);
 
     project.setAttribute("tabindex", "0");
     project.setAttribute("role", "button");
