@@ -1011,15 +1011,93 @@ corepack pnpm run build</code></pre>
       },
     ],
     [
-      "Projeto 004",
+      "UniVerse",
       {
         index: "Projeto 004",
-        slug: "projeto-004",
-        title: "Projeto 004",
+        slug: "universe",
+        title: "UniVerse (em breve)",
         url: "",
-        description: "Descricao do Projeto 004.",
-        features: ["Funcionalidade A", "Funcionalidade B", "Funcionalidade C"],
-        tags: ["Tecnologia X", "Tecnologia Y", "Tecnologia Z"],
+        description:
+          "Sistema academico full-stack desenvolvido pela Cogni para gestao universitaria, com RBAC em 8 perfis, matriculas, notas, frequencia, horarios, documentos e paineis personalizados por papel.",
+        features: [
+          "Monorepo full-stack com apps web, api e pacote shared",
+          "Autenticacao JWT com refresh token em cookie HTTP-only",
+          "RBAC real no backend para 8 perfis de usuario",
+          "CRUD academico para alunos, professores, cursos, disciplinas, turmas e matriculas",
+          "Notas, frequencia, horarios e documentos academicos",
+          "Upload de anexos e fluxo de aprovacao/rejeicao com motivo",
+          "Paineis personalizados para aluno, professor, secretaria, coordenacao e admin",
+          "Seed realista com alunos, professores, cursos e dados academicos",
+        ],
+        tags: [
+          "React",
+          "Vite",
+          "Chakra UI",
+          "Bun",
+          "Elysia",
+          "Drizzle ORM",
+          "SQLite",
+          "RBAC",
+          "JWT",
+        ],
+        AreadmeHtml: `
+          <section class="Areadme-section">
+            <h3>UniVerse</h3>
+            <blockquote>Sistema de gestao academica universitaria inspirado em solucoes como TOTVS/Abaris, com arquitetura web moderna, leve e orientada a papeis.</blockquote>
+            <p>O UniVerse foi desenvolvido pela Cogni como um produto academico full-stack. A proposta e reunir o nucleo de uma universidade em uma experiencia unica: matriculas, turmas, notas, frequencia, horarios, documentos e paineis especificos para cada perfil.</p>
+          </section>
+          <section class="Areadme-section">
+            <h3>Stack</h3>
+            <div class="info-grid">
+              <span><b>Frontend</b> React, Vite, Chakra UI, React Router, TanStack Query, React Hook Form e Zod</span>
+              <span><b>Backend</b> Bun, Elysia, JWT e Drizzle ORM</span>
+              <span><b>Banco</b> SQLite em desenvolvimento, com PostgreSQL planejado para producao</span>
+              <span><b>Monorepo</b> apps/web, apps/api e packages/shared</span>
+            </div>
+          </section>
+          <section class="Areadme-section">
+            <h3>Recursos principais</h3>
+            <ul>
+              <li>Auth com access token e refresh token em cookie HTTP-only.</li>
+              <li>RBAC com Admin, Secretaria, Coordenacao, Professor, Aluno, Financeiro, Biblioteca e TI.</li>
+              <li>CRUD academico completo com listagens enriquecidas e filtros por busca.</li>
+              <li>Notas e frequencia lancadas pelo professor apenas nas proprias turmas.</li>
+              <li>Aluno acompanha boletim, frequencia, aulas e documentos em interface de cards.</li>
+              <li>Secretaria aprova ou rejeita documentos com motivo obrigatorio.</li>
+              <li>Sino de notificacoes no header para pendencias administrativas.</li>
+            </ul>
+          </section>
+          <section class="Areadme-section">
+            <h3>Arquitetura</h3>
+            <pre><code>UniversitySystem/
+├── apps/web/          # Frontend React
+├── apps/api/          # API Elysia + Drizzle
+└── packages/shared/   # Zod schemas, RBAC e constantes</code></pre>
+            <p>As permissoes ficam centralizadas no pacote compartilhado e tambem sao aplicadas no backend, evitando que aluno ou professor acessem dados fora do proprio escopo.</p>
+          </section>
+          <section class="Areadme-section">
+            <h3>Como rodar</h3>
+            <pre><code>cd UniversitySystem
+npm install
+npm run db:migrate
+npm run db:seed
+npm run dev:api
+npm run dev:web</code></pre>
+          </section>
+          <section class="Areadme-section">
+            <h3>Roadmap</h3>
+            <table>
+              <thead>
+                <tr><th>Fase</th><th>Modulos</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>Auth, RBAC e nucleo CRUD</td><td>Concluida</td></tr>
+                <tr><td>2</td><td>Notas, frequencia, horarios e documentos</td><td>Concluida</td></tr>
+                <tr><td>3</td><td>Financeiro, biblioteca, eventos, TCC e SSO</td><td>Pendente</td></tr>
+              </tbody>
+            </table>
+          </section>
+        `,
       },
     ],
   ]);

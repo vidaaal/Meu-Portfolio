@@ -85,6 +85,12 @@
     transform 220ms ease;
 }
 
+.project-preview svg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
 .project:hover .project-preview img {
   filter: saturate(1.18) contrast(1.08);
   transform: scale(1.035);
@@ -145,6 +151,13 @@
   color: var(--accent-2);
   font-size: 0.75rem;
   color: rgb(163, 179, 107);
+}
+
+.project-soon {
+  color: var(--accent);
+  font-size: 0.58em;
+  font-weight: 300;
+  white-space: nowrap;
 }
 
 .project h3 {
